@@ -1,0 +1,16 @@
+table {
+    width: 75%;
+    margin: auto;
+}
+
+th, td {
+    border-top: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    height: 20px;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 150px;
+}

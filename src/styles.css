@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    text-align: center;
+}
+
+i {
+    color: yellow;
+}
+
+ul li
+{
+    text-align: left;
+}
