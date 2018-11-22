@@ -1,0 +1,29 @@
+<h3>Ajout d'un film</h3>
+
+<form #filmajoutForm="ngForm" (ngSubmit)="ajoutFilm()">
+  <input type="text" [(ngModel)]="filmajoutform.title" name="title" placeholder="Titre du film" required #titlefield="ngModel">
+  <div *ngIf="titlefield.invalid && titlefield.dirty">
+    Vous devez choisir un titre !
+  </div>
+  <br />
+
+  <input type="date" [(ngModel)]="filmajoutform.publish_date" name="publish_date" placeholder="Date de publication" required #publish_datefield="ngModel">
+  <div *ngIf="publish_datefield.invalid && publish_datefield.dirty">
+    Vous devez mettre une date de publication !
+  </div>
+  <br />
+
+  <input type="url" [(ngModel)]="filmajoutform.url" name="url" placeholder="Url" required #urlfield="ngModel" pattern="^(https?|ftp)://[^\s/$.?#].[^\s]*$">
+  <div *ngIf="urlfield.invalid && urlfield.dirty">
+    Vous devez choisir une Url pour le poster !
+  </div>
+  <br />
+
+  <input type="number" [(ngModel)]="filmajoutform.note" name="note" placeholder="Note" required #notefield="ngModel" pattern="[0-5]">
+  <div *ngIf="notefield.invalid && notefield.dirty">
+    Vous devez mettre une note !
+  </div>
+  <br /><br />
+
+  <button type="submit" [disabled]="!filmajoutForm.valid">Ajouter ce film</button>
+</form>
