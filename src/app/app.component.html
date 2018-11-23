@@ -1,15 +1,38 @@
-<h1>{{ title }}</h1>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5 justify-content-between">
+    <a class="navbar-brand" routerLink="/">
+        <img src="../assets/img/bande.png" width="100" height="50" class="d-inline-block align-top" alt="allucine">
+        <span class="title ml-1">{{ title }}</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+            <a class="nav-link" routerLink="/films">Liste</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" routerLink="/film/add">Ajout</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" routerLink="/connect">Connection</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<ul>
+<!-- <ul> -->
     <!-- Identification / Connexion -->
-    <li routerLink="/connect">Identification / Connexion</li>
+    <!-- <li routerLink="/connect">Identification / Connexion</li> -->
     <!-- Ajout de film -->
-    <li routerLink="/film/add">Ajout de film</li>
+    <!-- <li routerLink="/film/add">Ajout de film</li> -->
     <!-- Par template -->
-    <li routerLink="/films">Liste de films</li>
+    <!-- <li routerLink="/films">Liste de films</li> -->
     <!-- Par component -->
     <!-- <li (click)="goListFilms()">Liste de films</li> -->
-</ul>
+<!-- </ul> -->
 
 
 <!-- <app-movie-list></app-movie-list> -->

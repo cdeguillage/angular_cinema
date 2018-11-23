@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
   private films: Array<any>;
 
   constructor(private route: ActivatedRoute, private filmdatas: FilmdatasService ) {
-    this.films = this.filmdatas.getAll();
+    // this.films = this.filmdatas.getAll();
     this.id = route.snapshot.params.id;
   }
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmAjoutForm } from './filmajout';
+import { FilmArray } from '../../service/datatype/filmarray';
 import { FilmdatasService } from '../../service/filmdatas.service';
+
+// import { HttpGetDataService } from '../../service/httpgetdata.service';
+
 
 @Component({
   selector: 'app-filmajoutform',
@@ -9,8 +12,8 @@ import { FilmdatasService } from '../../service/filmdatas.service';
 })
 export class FilmajoutformComponent implements OnInit {
 
-  private filmajoutform: FilmAjoutForm = new FilmAjoutForm();
-  private filmdatas: FilmdatasService = new FilmdatasService();
+  private filmajoutform: FilmArray;
+  private filmdatas: FilmdatasService;
 
   constructor() { }
 

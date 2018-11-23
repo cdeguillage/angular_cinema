@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { FilmArray } from '../../service/datatype/filmarray';
 import { FilmdatasService } from '../../service/filmdatas.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { FilmdatasService } from '../../service/filmdatas.service';
 
 export class FilmsComponent implements OnInit {
 
-  private films: Array<any>;
+  private films: Array<FilmArray>;
 
   constructor( private router: Router, private filmdatas: FilmdatasService ) {
   }

@@ -1,4 +1,4 @@
-export class FilmAjoutForm {
+export interface FilmInterface {
     id: number;
     title: string;
     publish_date: string;
