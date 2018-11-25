@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { resolve } from 'url';
+import { HttpClient } from '@angular/common/http';
 
+// Structure des données
 import { FilmArray } from './datatype/filmarray';
+import { FilmInterface } from './datatype/filminterface';
+import { forEach } from '@angular/router/src/utils/collection';
+import { resolve } from 'url';
 
 @Injectable({
     providedIn: 'root'
@@ -10,31 +13,50 @@ import { FilmArray } from './datatype/filmarray';
 
 export class HttpGetDataService {
 
-    // Constantes
-    httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-
-    // Fichier JSON datas
-    configUrl = '../assets/config.json';
+    // Serveur JSON
+    private apiRoot: string = 'http://localhost:3000';
 
     // Base de données - films
-    apiRootData: string = 'http://localhost:3000/films';
-    private films: Array<FilmArray>;
+    private apiRootFilms: string = this.apiRoot + '/films';
+    public films: Array<FilmArray>;
+    public film: FilmArray;
 
     // Base de données - users
-    apiRootUsers: string = 'http://localhost:3000/users';
+    private apiRootUsers: string = this.apiRoot + '/users';
+    // private users: Array<UserArray>;
 
-
-    constructor( public http: HttpClient, public resFilms: FilmArray ) {
+    constructor( private http: HttpClient ) {
+    }
+    
+    ngOnInit() {
         // Restitue la base de données "films" par API
         // Exemple d'URL personnalisé : let apiURL = `${this.apiRoot}?term=${term}&media=music&limit=20`;
+        this.http.get<FilmInterface[]>( this.apiRootFilms )
+            .subscribe( data => {
+                this.films = data;
+                for(let film of this.films) {
+                    if (film.id === 1) {
+                        console.log('-3---------------------');
+                        this.film = film;
+                        console.log(film);
+                        console.log(this.film);
+                        console.log('-4---------------------');
+                    }
+                }
+                console.log(this.film);
+            }
+        );
+    }
+    
+    public getFilms() {
+        console.log('-1---------------------');
+        console.log(' --> ' + this.film);
+        console.log('-2---------------------');
+        return this.films;
     }
 
-    public getFilms() {
-
-        return this.http.get( this.apiRootData );
-
+    public add( film: FilmInterface ) {
+        this.films.push( film );
     }
 
 }

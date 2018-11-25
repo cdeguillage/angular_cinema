@@ -4,14 +4,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { HomeComponent } from './component/home/home.component';
 import { FilmsComponent } from './component/films/films.component';
+import { DetailsComponent } from './component/details/details.component';
+import { FilmajoutformComponent } from './forms/filmajoutform/filmajoutform.component';
+
 import { FilmactiveDirective } from './directive/filmactive.directive';
 import { StarPipe } from './pipe/star/star.pipe';
-import { DetailsComponent } from './component/details/details.component';
-import { HomeComponent } from './component/home/home.component';
 
+// ARRAY
 import { FilmdatasService } from './service/filmdatas.service';
-import { FilmajoutformComponent } from './forms/filmajoutform/filmajoutform.component';
+// HTTP
+import { HttpGetDataService } from './service/httpgetdata.service';
+
 
 const route: Routes = [
   { path: '', component: HomeComponent },
@@ -29,15 +34,16 @@ const route: Routes = [
     HomeComponent,
     FilmajoutformComponent
   ],
-    imports: [
-      CommonModule,
-      RouterModule.forRoot(route),
-      RouterModule.forChild(route),
-      FormsModule,
-      HttpClientModule
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(route),
+    RouterModule.forChild(route),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    FilmdatasService
+    FilmdatasService,
+    HttpGetDataService
   ]
 })
 export class CinemaModule { }

@@ -2,10 +2,12 @@
 body {
     margin: auto;
     padding-top: 7rem;
+    background-color: black;
+    color: white;
 }
 
 i {
-    color: yellow;
+    color: White;
 }
 
 ul li

@@ -1,15 +1,15 @@
 <h2>Liste des films disponibles</h2>
 <div class="films">
-  <h3>Nombre de films : {{films.length}}</h3>
+  <!-- <h3>Nombre de films : {{films.length}}</h3> -->
 
-  <div *ngIf="films.length == 0; else tablefilms">
+  <!-- <div *ngIf="films.length == 0; else tablefilms">
     Aucun film disponible !
-  </div>
+  </div> -->
 
   <ng-template #tablefilms>
     <table>
       <thead>
-        <th>id</th>
+        <th></th>
         <th>Titre</th>
         <th>Date de publication</th>
         <th></th>
@@ -17,10 +17,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let film of films">
-          <td>{{film.id}}</td>
+          <td class="line-right">{{film.id}}</td>
           <!-- <td (click)="alerttitle(film.title)" filmActive>{{film.title}}</td> -->
           <td (click)="goDetails(film.id)">{{film.title}}</td>
-          <td>{{film.publish_date | date:'EEEE dd MMMM yyyy' }}</td>
+          <td>{{film.publish_date | date:'EEE dd MMM yyyy' }}</td>
           <td><img [src] = "film.url" /></td>
           <td><span [innerHTML] = "film.note | star"></span></td>
         </tr>

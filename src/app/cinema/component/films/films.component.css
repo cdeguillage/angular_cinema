@@ -1,10 +1,21 @@
 table {
     width: 75%;
     margin: auto;
+    margin-top: 3rem;
+    background-color: #111111;
 }
 
-th, td {
-    border-top: 1px solid #ddd;
+th {
+    border-top: 1px solid black;
+    /* border-bottom: 1px solid #ddd; */
+    height: 20px;
+    text-align: center;
+    background-color: white;
+    color:black;
+}
+
+td {
+    border-top: 1px dotted gray;
     /* border-bottom: 1px solid #ddd; */
     height: 20px;
     text-align: center;
@@ -13,4 +24,10 @@ th, td {
 img {
     width: 100px;
     height: 150px;
+    margin: 10px;
+    border: 1px white solid;
+}
+
+.line-right {
+    border-right: 1px solid gray;
 }

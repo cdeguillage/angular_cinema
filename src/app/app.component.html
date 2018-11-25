@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5 justify-content-between">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
     <a class="navbar-brand" routerLink="/">
         <img src="../assets/img/bande.png" width="100" height="50" class="d-inline-block align-top" alt="allucine">
         <span class="title ml-1">{{ title }}</span>
@@ -7,17 +7,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-            <a class="nav-link" routerLink="/films">Liste</a>
+        <!-- mr-auto  gauche / droite -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item pl-5" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/films">Liste des films</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" routerLink="/film/add">Ajout</a>
+            <li class="nav-item pl-5" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/film/add">Gestion d'un film</a>
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
-            <a class="nav-link" routerLink="/connect">Connection</a>
+            <li class="nav-item pl-5" [routerLinkActive]="['active']">
+                <a class="btn btn-outline-light mr-3" routerLink="/connect">&nbsp;&nbsp;S'inscrire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Se connecter&nbsp;&nbsp;</a>
+                <!-- <a class="btn btn-outline-light mr-3" [routerLink]="/connect">Se connecter</a> -->
+                <!-- <a class="nav-link" [routerLink]="/connect">Connection</a> -->
             </li>
         </ul>
     </div>
@@ -25,11 +28,11 @@
 
 <!-- <ul> -->
     <!-- Identification / Connexion -->
-    <!-- <li routerLink="/connect">Identification / Connexion</li> -->
+    <!-- <li [routerLink]="/connect">Identification / Connexion</li> -->
     <!-- Ajout de film -->
-    <!-- <li routerLink="/film/add">Ajout de film</li> -->
+    <!-- <li [routerLink]="/film/add">Ajout de film</li> -->
     <!-- Par template -->
-    <!-- <li routerLink="/films">Liste de films</li> -->
+    <!-- <li [routerLink]="/films">Liste de films</li> -->
     <!-- Par component -->
     <!-- <li (click)="goListFilms()">Liste de films</li> -->
 <!-- </ul> -->

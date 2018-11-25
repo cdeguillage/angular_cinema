@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmArray } from '../../service/datatype/filmarray';
-import { FilmdatasService } from '../../service/filmdatas.service';
 
-// import { HttpGetDataService } from '../../service/httpgetdata.service';
+// Structure des datas
+import { FilmArray } from '../../service/datatype/filmarray';
+
+// ARRAY
+import { FilmdatasService } from '../../service/filmdatas.service';
+// HTTP
+import { HttpGetDataService } from '../../service/httpgetdata.service';
 
 
 @Component({
@@ -13,7 +17,10 @@ import { FilmdatasService } from '../../service/filmdatas.service';
 export class FilmajoutformComponent implements OnInit {
 
   private filmajoutform: FilmArray;
-  private filmdatas: FilmdatasService;
+  // ARRAY
+  // private filmdatas: FilmdatasService;
+  // HTTP
+  private filmdatas: HttpGetDataService;
 
   constructor() { }
 
@@ -21,10 +28,12 @@ export class FilmajoutformComponent implements OnInit {
   }
 
   onSubmit() {
+    // Ajout d'un film dans la base de données (ARRAY ou HTTP)
     this.filmdatas.add( this.filmajoutform );
   }
 
   ajoutFilm() {
+    // Meesage d'insertion d'un film dans la base de données
     alert('Le film "' + this.filmajoutform.title + '" a été ajouté !');
   }
 

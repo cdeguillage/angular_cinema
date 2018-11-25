@@ -1,14 +1,10 @@
-<div class="films" *ngFor="let film of films">
-  <div *ngIf="film.id == id">
-    <h2>Détail du film : {{ film.title }}</h2>
+<h2>Détail du film : {{ film.title }}</h2>
 
-    <table>
-      <tbody>
-        <tr><td>id : {{film.id}}</td></tr>
-        <tr><td>Date de publication : {{film.publish_date | date:'EEEE dd MMMM yyyy' }}</td></tr>
-        <tr><td><img [src]="film.url" /></td></tr>
-        <tr><td>Note : <span [innerHTML]="film.note | star"></span></td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+<table>
+  <tbody>
+    <tr><td>id : {{film.id}}</td></tr>
+    <tr><td>Date de publication : {{film.publish_date | date:'EEEE dd MMMM yyyy' }}</td></tr>
+    <tr><td><img [src]="film.url" /></td></tr>
+    <tr><td>Note : <span [innerHTML]="film.note | star"></span></td></tr>
+  </tbody>
+</table>
